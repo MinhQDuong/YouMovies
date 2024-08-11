@@ -1,0 +1,49 @@
+.feed{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 16px;
+    grid-row-gap: 30px;
+    margin-top: 15px;
+}
+.card img {
+    width: 100%;
+    border-radius: 5%;
+    transition: all 0.5s ease;
+}
+.card {
+    border-radius: 5%;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+  
+.card:hover {
+    border-radius: 0;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+  
+.card:hover img {
+    border-radius: 0;
+}
+
+.card h2{
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    margin: 5px 0;
+    margin-left: 5px;
+}
+.card h3{
+    font-size: 14px;
+    font-weight: 400;
+    color: #555;
+    margin: 6px 0;
+    margin-left: 5px;
+}
+.card p{
+    font-size: 14px;
+    font-weight: 400;
+    color: #555;
+    margin-left: 5px;
+    padding-bottom: 5px;
+}
