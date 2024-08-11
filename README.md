@@ -29,5 +29,5 @@
 ![Homepage](Images\Homepage.png)
 
 ### Video page:
-![Videopage](Images\WatchVideopage.png)"# YouMovies" 
+![Videopage](Images\WatchVideopage.png)
 
