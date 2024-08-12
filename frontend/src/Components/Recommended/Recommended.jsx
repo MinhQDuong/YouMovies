@@ -4,7 +4,7 @@ import { API_KEY, value_converter, decodeHtml } from '../../data'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 
-const Recommended = ({selectedGenre}) => {
+const Recommended = ({selectedGenre, searchQuery}) => {
 
   const [videos, setVideos] = useState([]);
 
@@ -13,7 +13,7 @@ const Recommended = ({selectedGenre}) => {
       try {
         
         const response = await axios.get(
-          `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${selectedGenre}%20official%20movie%20trailer&type=video&relevanceLanguage=en&key=${API_KEY}`
+          `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${searchQuery}${selectedGenre}%20official%20movie%20trailer&type=video&relevanceLanguage=en&key=${API_KEY}`
         );
 
         // Fetch the view count for each video

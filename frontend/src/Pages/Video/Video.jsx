@@ -4,7 +4,7 @@ import PlayVideo from '../../Components/PlayVideo/PlayVideo'
 import Recommended from '../../Components/Recommended/Recommended'
 import {useParams} from 'react-router-dom'
 
-const Video = ({selectedGenre}) => {
+const Video = ({selectedGenre, searchQuery}) => {
 
   const {videoId} = useParams();
 
@@ -12,7 +12,7 @@ const Video = ({selectedGenre}) => {
   return (
     <div className = 'play-container'>
       <PlayVideo videoId = {videoId}/>
-      <Recommended selectedGenre = {selectedGenre}/>
+      <Recommended selectedGenre = {selectedGenre} searchQuery = {searchQuery}/>
     </div>
   )
 }

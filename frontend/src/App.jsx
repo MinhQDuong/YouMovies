@@ -8,13 +8,16 @@ const App = () => {
 
   const [sidebar, setSidebar] = useState(true);
   const [selectedGenre, setSelectedGenre] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+  
 
   return (
     <div>
-      <Navbar setSidebar = {setSidebar}/>
+      <Navbar setSidebar = {setSidebar}  searchQuery = {searchQuery} setSearchQuery={setSearchQuery}/>
       <Routes>
-        <Route path = '/' element = {<Home sidebar={sidebar} selectedGenre = {selectedGenre} setSelectedGenre = {setSelectedGenre}/>}/>
-        <Route path = '/video/:videoId' element = {<Video selectedGenre={selectedGenre}/>} />
+        <Route path = '/' element = {<Home sidebar={sidebar} selectedGenre = {selectedGenre} setSelectedGenre = {setSelectedGenre} searchQuery = {searchQuery}/>}/>
+        
+        <Route path = '/video/:videoId' element = {<Video selectedGenre={selectedGenre} searchQuery = {searchQuery}/>} />
       </Routes>
     </div>
   )

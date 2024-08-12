@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './Home.css'
 import Sidebar from '../../Components/Sidebar/Sidebar'
 import Feed from '../../Components/Feed/Feed'
 
-const Home = ({sidebar, selectedGenre, setSelectedGenre}) => {
+const Home = ({sidebar, selectedGenre, setSelectedGenre, searchQuery}) => {
   
 
 
@@ -11,7 +11,7 @@ const Home = ({sidebar, selectedGenre, setSelectedGenre}) => {
     <>
       <Sidebar sidebar={sidebar} selectedGenre = {selectedGenre} setSelectedGenre={setSelectedGenre} />
       <div className={`container ${sidebar? '' : 'large-container'}`}>
-        <Feed selectedGenre={selectedGenre} />
+        <Feed selectedGenre={selectedGenre} searchQuery = {searchQuery} />
       </div>
     </>
   );

@@ -7,16 +7,14 @@ import { API_KEY, value_converter, decodeHtml } from '../../data';
 import moment from 'moment'
 
 
-const Feed = ({ selectedGenre }) => {
-
+const Feed = ({ selectedGenre, searchQuery }) => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        
         const response = await axios.get(
-          `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=32&q=${selectedGenre}%20official%20movie%20trailer&type=video&relevanceLanguage=en&key=${API_KEY}`
+          `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=32&q=${searchQuery}${selectedGenre}%20official%20movie%20trailer&type=video&relevanceLanguage=en&key=${API_KEY}`
         );
 
         // Fetch the view count for each video
@@ -38,8 +36,7 @@ const Feed = ({ selectedGenre }) => {
     };
 
     fetchVideos();
-  }, [selectedGenre]);
-
+  }, [selectedGenre, searchQuery]);
   
 
   return (
